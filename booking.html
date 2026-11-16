@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book a Laundry Service - LaundryWallah</title>
+    <link rel="stylesheet" href="booking.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <a href="laundry.html" class="logo">LaundryWallah</a>
+        <nav class="nav-links">
+            <a href="laundry.html">Home</a>
+            <a href="#pricing">Pricing & Timing</a>
+            <a href="#book-form">Book Now</a>
+            <a href="login.html">Logout</a>
+        </nav>
+        <div class="nav-right">
+            <button id="theme-toggle" class="theme-btn" title="Toggle Dark Mode">🌙</button>
+            <div class="user-name">Priyanka</div>
+        </div>
+        
+    </header>
+
+    <main class="container">
+        
+        <!-- Pricing & Turnaround Cards -->
+        <section id="pricing" class="pricing-section">
+            <h2>Services, Pricing & Turnaround Time</h2>
+            <p class="section-subtitle">Transparent pricing with guaranteed on-time delivery.</p>
+
+            <div class="pricing-cards">
+                <div class="price-card">
+                    <h3>Wash & Fold</h3>
+                    <p class="price">₹60 <span>/ kg</span></p>
+                    <p class="timing">⏱ Done in: <strong>24 Hours</strong></p>
+                    <ul>
+                        <li>Everyday wear (T-shirts, Jeans, Kurtas)</li>
+                        <li>Eco-friendly fabric softener</li>
+                        <li>Neatly folded & packed</li>
+                    </ul>
+                </div>
+
+                <div class="price-card featured">
+                    <span class="badge">Most Popular</span>
+                    <h3>Wash & Steam Iron</h3>
+                    <p class="price">₹90 <span>/ kg</span></p>
+                    <p class="timing">⏱ Done in: <strong>24 - 36 Hours</strong></p>
+                    <ul>
+                        <li>Office formals, Shirts, Trousers</li>
+                        <li>Wrinkle-free steam pressing</li>
+                        <li>Hanger or fold delivery</li>
+                    </ul>
+                </div>
+
+                <div class="price-card">
+                    <h3>Dry Cleaning</h3>
+                    <p class="price">₹150+ <span>/ piece</span></p>
+                    <p class="timing">⏱ Done in: <strong>48 - 72 Hours</strong></p>
+                    <ul>
+                        <li>Suits, Sarees, Jackets, Blankets</li>
+                        <li>Delicate stain removal</li>
+                        <li>Protective garment cover</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Booking Form with Live Calculator -->
+        <section id="book-form" class="booking-section">
+            <h2>Schedule Your Pickup</h2>
+            <p class="section-subtitle">Customize your wash preferences and see instant pricing & completion time.</p>
+
+            <form id="booking-form" class="booking-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="service-type">Select Service Type</label>
+                        <select id="service-type" required>
+                            <option value="wash-fold">Wash & Fold (₹60/kg - 24 Hrs)</option>
+                            <option value="wash-iron">Wash & Steam Iron (₹90/kg - 36 Hrs)</option>
+                            <option value="dry-clean">Dry Cleaning (₹150/pc - 48 Hrs)</option>
+                            <option value="iron-only">Steam Ironing Only (₹15/pc - 12 Hrs)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="delivery-speed">Turnaround Speed</label>
+                        <select id="delivery-speed">
+                            <option value="standard">Standard Delivery (Included)</option>
+                            <option value="express">Same-Day Express (+₹80 flat fee - Done in 8 Hrs)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Type of Clothes Included</label>
+                    <div class="checkbox-grid">
+                        <label class="checkbox-item"><input type="checkbox" checked> Daily Wear (T-Shirts, Jeans)</label>
+                        <label class="checkbox-item"><input type="checkbox"> Office Formals (Shirts, Trousers)</label>
+                        <label class="checkbox-item"><input type="checkbox"> Ethnic / Delicates (Sarees, Kurtas)</label>
+                        <label class="checkbox-item"><input type="checkbox"> Heavy Winter Wear (Jackets, Sweaters)</label>
+                        <label class="checkbox-item"><input type="checkbox"> Household (Bedsheets, Curtains, Towels)</label>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="weight">Estimated Weight (kg) or Piece Count</label>
+                        <input type="number" id="weight" min="1" max="50" value="3" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="pickup-date">Pickup Date</label>
+                        <input type="date" id="pickup-date" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="pickup-time">Preferred Time Slot</label>
+                        <select id="pickup-time" required>
+                            <option value="morning">08:00 AM - 11:00 AM</option>
+                            <option value="afternoon">12:00 PM - 03:00 PM</option>
+                            <option value="evening">05:00 PM - 08:00 PM</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="detergent">Detergent & Wash Preference</label>
+                        <select id="detergent">
+                            <option value="regular">Standard Scented Detergent</option>
+                            <option value="sensitive">Hypoallergenic / Baby-Safe (Unscented)</option>
+                            <option value="cold">Cold Water Wash (Prevent Color Fade)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="payment">Payment Method</label>
+                        <select id="payment">
+                            <option value="cod">Pay on Delivery (Cash / UPI)</option>
+                            <option value="online">Pay Online After Weighing</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="address">Pickup & Delivery Address</label>
+                    <input type="text" id="address" placeholder="House/Flat No., Street, Landmark, City" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="notes">Special Care Instructions (Optional)</label>
+                    <textarea id="notes" rows="3" placeholder="e.g., Coffee stain on white shirt, do not tumble dry woolens..."></textarea>
+                </div>
+
+                <!-- Live Price & Completion Time Banner -->
+                <div class="live-summary-box">
+                    <div>
+                        <span>Estimated Total:</span>
+                        <strong id="live-total">₹180</strong>
+                    </div>
+                    <div>
+                        <span>Estimated Completion:</span>
+                        <strong id="live-ready-time">Calculating...</strong>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-btn">Confirm Pickup Booking</button>
+            </form>
+        </section>
+
+    </main>
+
+    <!-- Booking Confirmation Modal -->
+    <div id="confirmation-modal" class="modal-overlay">
+        <div class="modal-card">
+            <h3>✅ Pickup Confirmed!</h3>
+            <p class="modal-subtitle">Your laundry order has been scheduled successfully.</p>
+            <div id="modal-summary" class="modal-details"></div>
+            <button id="close-modal" class="submit-btn">Done</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
